@@ -40,26 +40,22 @@ public struct LoadingRingView: View {
     
     public var body: some View {
     
-//        ZStack {
-            RingView()
-                .onAppear() {
-                    startAnimation.toggle()
+        RingView()
+            .onAppear() {
+                startAnimation.toggle()
+            }
+            .phaseAnimator(Phase.allCases, trigger: startAnimation) { content, phase in
+                content
+                    .rotationEffect(phase.angle)
+                    .scaleEffect(phase.scale)
+            } animation: { phase in
+                switch phase {
+                case .initial: .linear.repeatForever(autoreverses: false).speed(0.075)
+                case .rotate: .smooth(duration: 3.00)
+                case .grow: .smooth(duration: 0.50)
+                case .collapse: .smooth(duration: 0.10)
                 }
-                .phaseAnimator(Phase.allCases, trigger: startAnimation) { content, phase in
-                    content
-                        .rotationEffect(phase.angle)
-                        .scaleEffect(phase.scale)
-                } animation: { phase in
-                    switch phase {
-                    case .initial: .linear.repeatForever(autoreverses: false).speed(0.075)
-                    case .rotate: .smooth(duration: 3.00)
-                    case .grow: .smooth(duration: 0.50)
-                    case .collapse: .smooth(duration: 0.10)
-                    }
-                }
-//                .zIndex(1)
-            
-//        }
+            }
         
     }
     

@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct RotatingRingView: View {
-    @State var isRotating = 0.0
-//    @Binding var rotate = false
+    @State private var isRotating = 0.0
     
     var body: some View {
+        
         RingView()
             .fixedSize()
             .rotationEffect(.degrees(isRotating))
@@ -22,6 +22,7 @@ struct RotatingRingView: View {
                         isRotating = 360.00
                 }
             }
+        
     }
 }
 

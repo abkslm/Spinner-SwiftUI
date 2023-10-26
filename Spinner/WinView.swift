@@ -40,7 +40,7 @@ struct WinView: View {
             Text(winStatus.text)
                 .font(.largeTitle)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        
+            
             Button(action: setWaiting, label: {Text("Reset")})
                 .buttonStyle(.bordered)
             
