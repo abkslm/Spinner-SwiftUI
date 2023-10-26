@@ -21,7 +21,7 @@ struct ContentView: View {
         VStack {
             
             switch loadState {
-            case .waiting: InitView(loadState: $loadState, participantID: "")
+            case .waiting: InitView(loadState: $loadState)
                     .transition(.push(from: .bottom)
                         .animation(.easeOut(duration: 0.40))
                         .combined(with: .opacity))

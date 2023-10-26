@@ -10,15 +10,11 @@ import SwiftUI
 struct InitView: View {
     
     @Binding var loadState: LoadState
-    
     @FocusState var focusIDField: Bool
-    @State var participantID: String
     
     private func setRunning () {
         loadState = .running
     }
-    
-
     
     var body: some View {
         VStack {
