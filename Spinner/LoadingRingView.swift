@@ -6,7 +6,6 @@
 ////
 
 import SwiftUI
-import Observation
 
 private enum Phase: CaseIterable {
     case initial
