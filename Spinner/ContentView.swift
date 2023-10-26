@@ -22,7 +22,9 @@ struct ContentView: View {
             
             switch loadState {
             case .waiting: InitView(loadState: $loadState, participantID: "")
-                    .transition(.push(from: .bottom).animation(.easeOut(duration: 0.50)))
+                    .transition(.push(from: .bottom)
+                        .animation(.easeOut(duration: 0.40))
+                        .combined(with: .opacity))
             case .running: GameView(loadState: $loadState)
                     .transition(.opacity.animation(.smooth(duration: 0.25)))
             }
