@@ -12,7 +12,6 @@ enum LoadState {
     case running
 }
 
-
 struct ContentView: View {
     
     @State var loadState = LoadState.waiting
